@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Me in 10kb</title>
+	
+	<style>
+		.slider-container {
+			max-width: 500px;
+			height: 500px;
+			position: relative;
+		}
+
+		.slider-container {
+
+		}
+
+		.slider-container > div {
+           position: absolute;
+           top:0;
+           height: 100%;
+           width: 100%;
+           background-color: #fe0;
+           transition: all 0.5s ease-in-out;
+		}
+
+        #slide-1:checked ~ .slide-1 {
+           z-index: 5;
+           transition: all 0.5s ease-in-out;
+        }
+
+        #slide-2:checked ~ .slide-2 {
+           z-index: 5;
+        }
+
+        #slide-3:checked ~ .slide-3 {
+           z-index: 5;
+        }
+	</style>
+</head>
+<body>
+
+  <div class="slider-container">
+
+       <input type="radio" id="slide-1" name="slide-1">
+       <div class="slide-1" style="background-color: #fe0">
+         1
+       </div>
+     
+       <input type="radio" id="slide-2" name="slide-1">
+       <div class="slide-2" style="background-color: red">
+         2
+       </div>
+   
+       <input type="radio" id="slide-3" name="slide-1">
+       <div class="slide-3" style="background-color: blue">
+         3
+       </div>
+
+  </div>
+
+  <div class="pagination">
+    
+    <label for="slide-1">
+    	1
+    </label>
+    
+    <label for="slide-2">
+    	2
+    </label>
+    
+    <label for="slide-3">
+    	3
+    </label>
+  
+  </div>
+
+</body>
+</html>
