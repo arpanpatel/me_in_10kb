@@ -5,14 +5,21 @@
 	<title>Me in 10kb</title>
 	
 	<style>
+	    
+	    body {
+	    	background: #e2e1e0;
+	    	font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
+	    }
+
 		.slider-container {
 			max-width: 500px;
 			height: 500px;
 			position: relative;
+			margin: 0 auto;
 		}
 
 		.slider-container {
-
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 		}
 
 		.slider-container > div {
@@ -21,21 +28,50 @@
            height: 100%;
            width: 100%;
            background-color: #fe0;
+
            transition: all 0.5s ease-in-out;
 		}
+
+		.slide-1 { z-index: 5 }
 
         #slide-1:checked ~ .slide-1 {
            z-index: 5;
            transition: all 0.5s ease-in-out;
         }
 
-        #slide-2:checked ~ .slide-2 {
-           z-index: 5;
+        #slide-2:checked ~ .slide-2 { z-index: 5 }
+
+        #slide-3:checked ~ .slide-3 { z-index: 5 }
+
+        .pagination {
+        	text-align: center;
+        	max-width: 500px;
+        	
+        	display: flex;
+        	margin: 30px auto 0 auto;
+        	border-radius: 4px;
+        	overflow: hidden;
+        	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         }
 
-        #slide-3:checked ~ .slide-3 {
-           z-index: 5;
+        .pagination label {
+        	border-right: 1px solid #e5e5e5;
+        	display: inline-block;
+        	padding: 15px 0;
+        	background-color: #fff;
+        	cursor: pointer;
+        	width: 33.33%;
+        	min-width: 100px;
         }
+
+        .pagination label:hover {
+        	background-color: transparent;
+        }
+
+        .pagination label:last-child {
+           border-right: 0;
+        }
+
 	</style>
 </head>
 <body>
@@ -62,15 +98,15 @@
   <div class="pagination">
     
     <label for="slide-1">
-    	1
+    	Intro
     </label>
     
     <label for="slide-2">
-    	2
+    	About Me
     </label>
     
     <label for="slide-3">
-    	3
+    	The end
     </label>
   
   </div>
