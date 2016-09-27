@@ -16,10 +16,12 @@
 			height: 500px;
 			position: relative;
 			margin: 0 auto;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            background-color: #fff;
 		}
 
-		.slider-container {
-          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+		.slider-container input[type="radio"] {
+			display: none;
 		}
 
 		.slider-container > div {
@@ -28,25 +30,19 @@
            height: 100%;
            width: 100%;
            background-color: #fe0;
-
+           opacity: 0;
            transition: all 0.5s ease-in-out;
 		}
 
-		.slide-1 { z-index: 5 }
+        #slide-1:checked ~ .slide-1 { z-index: 5; opacity: 1; }
 
-        #slide-1:checked ~ .slide-1 {
-           z-index: 5;
-           transition: all 0.5s ease-in-out;
-        }
+        #slide-2:checked ~ .slide-2 { z-index: 5; opacity: 1; }
 
-        #slide-2:checked ~ .slide-2 { z-index: 5 }
-
-        #slide-3:checked ~ .slide-3 { z-index: 5 }
+        #slide-3:checked ~ .slide-3 { z-index: 5; opacity: 1; }
 
         .pagination {
         	text-align: center;
         	max-width: 500px;
-        	
         	display: flex;
         	margin: 30px auto 0 auto;
         	border-radius: 4px;
@@ -78,7 +74,7 @@
 
   <div class="slider-container">
 
-       <input type="radio" id="slide-1" name="slide-1">
+       <input type="radio" id="slide-1" checked="checked" name="slide-1">
        <div class="slide-1" style="background-color: #fe0">
          1
        </div>
