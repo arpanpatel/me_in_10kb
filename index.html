@@ -3,17 +3,27 @@
 <head>
 	<meta charset="utf-8">
 	<title>Me in 10kb</title>
-	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<style>
+
+	     h1,h2,h3{
+	     	margin:0;
+	     	padding: 0;
+	     } 
+
+	     p {
+	     	line-height: 24px;
+	     }
 	    
 	    body {
 	    	background: #e2e1e0;
 	    	font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
+	    	color: #444;
 	    }
 
 		.slider-container {
 			max-width: 500px;
-			height: 500px;
+			height: 300px;
 			position: relative;
 			margin: 0 auto;
 			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -27,11 +37,32 @@
 		.slider-container > div {
            position: absolute;
            top:0;
+           padding: 10px 20px;
            height: 100%;
            width: 100%;
-           background-color: #fe0;
+           box-sizing: border-box;
            opacity: 0;
            transition: all 0.5s ease-in-out;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+		}
+
+		.slide-1 {
+			background-color:  #2196F3;
+		}
+
+		.slide-2 {
+			background-color: #E91E63;
+			
+		}
+
+		.slide-3 {
+			background-color: #263238;
+		}
+
+		.slide-2 {
+			flex-direction: column;
 		}
 
         #slide-1:checked ~ .slide-1 { z-index: 5; opacity: 1; }
@@ -40,14 +71,60 @@
 
         #slide-3:checked ~ .slide-3 { z-index: 5; opacity: 1; }
 
+      
+        #slide-1:checked ~ footer [data-slide="1"]:after,
+        #slide-2:checked ~ footer [data-slide="2"]:after, 
+        #slide-3:checked ~ footer [data-slide="3"]:after {
+        	opacity: 1;
+        }
+
+        #slide-1:checked ~ footer [data-slide="1"]:after {
+           border-color: #2196F3 transparent transparent;
+        }
+
+        #slide-2:checked ~ footer [data-slide="2"]:after {
+           border-color: #E91E63 transparent transparent;
+        }
+
+        #slide-3:checked ~ footer [data-slide="3"]:after {
+           border-color: #263238 transparent transparent;
+        }
+
+        .intro-section {
+           border: 1px dashed;
+           border-color: #fff;
+           border-color: rgba(255,255,255,0.3);
+           width: 70%;
+           margin: 0 auto;
+           text-align: center;
+           padding: 13px 10px 17px 10px;
+        }
+
+        .intro-section h1 {
+        	text-transform: uppercase;
+        	color: #fefefe;
+        	opacity: 0.89;
+        	text-shadow: -1px -1px 1px rgba(93, 179, 248, 1);
+
+        }
+
+        .intro-section strong {
+        	font-weight: normal;
+        	color: #eee;
+        	opacity: 0.8;
+        }
+
         .pagination {
         	text-align: center;
         	max-width: 500px;
         	display: flex;
         	margin: 30px auto 0 auto;
-        	border-radius: 4px;
+        	/*border-radius: 4px;*/
         	overflow: hidden;
         	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        	position: absolute;
+            bottom: -51px;
+            width: 100%;
         }
 
         .pagination label {
@@ -58,7 +135,23 @@
         	cursor: pointer;
         	width: 33.33%;
         	min-width: 100px;
+        	position: relative;
         }
+
+        .pagination label:after {
+        	content: '';
+        	position: absolute;
+        	top:0;
+        	left:0;
+        	right:0;
+	        width: 0;
+			height: 0;
+			margin:0 auto;
+			border-style: solid;
+			border-width: 10px 10px 0 10px;
+			opacity: 0;
+        }
+
 
         .pagination label:hover {
         	background-color: transparent;
@@ -75,37 +168,44 @@
   <div class="slider-container">
 
        <input type="radio" id="slide-1" checked="checked" name="slide-1">
-       <div class="slide-1" style="background-color: #fe0">
-         1
+       <div class="slide-1">
+         <header class="intro-section">
+         <h1>Patel Arpan</h1>
+         <strong>(Designer / Developer)</strong>
+         </header>
        </div>
      
        <input type="radio" id="slide-2" name="slide-1">
-       <div class="slide-2" style="background-color: red">
-         2
+       <div class="slide-2">
+         <h2>About Me</h2>
+         <p>Hi there, <br> I'm arpan. 22 year old desinger from india, I specialise in website design.  I maintain a healthy balance between functionality and visual impact in all my work. I believe every piece of design can be a work of art. I love my work and enjoy each new project as I get it.</p>
        </div>
    
        <input type="radio" id="slide-3" name="slide-1">
-       <div class="slide-3" style="background-color: blue">
-         3
+       <div class="slide-3">
+         <header class="intro-section">
+         <h1>The End</h1>
+         </header>
        </div>
 
+	  <footer class="pagination">
+	    
+	    <label for="slide-1" data-slide="1">
+	    	Intro
+	    </label>
+	    
+	    <label for="slide-2" data-slide="2">
+	    	About Me
+	    </label>
+	    
+	    <label for="slide-3" data-slide="3">
+	    	The End
+	    </label>
+	  
+	  </footer>
+
   </div>
 
-  <div class="pagination">
-    
-    <label for="slide-1">
-    	Intro
-    </label>
-    
-    <label for="slide-2">
-    	About Me
-    </label>
-    
-    <label for="slide-3">
-    	The end
-    </label>
-  
-  </div>
 
 </body>
 </html>
