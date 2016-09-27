@@ -6,14 +6,9 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<style>
 
-	     h1,h2,h3{
-	     	margin:0;
-	     	padding: 0;
-	     } 
+	     h1,h2,h3 { margin:0; padding: 0 } 
 
-	     p {
-	     	line-height: 24px;
-	     }
+	     p { line-height: 24px }
 	    
 	    body {
 	    	background: #e2e1e0;
@@ -27,12 +22,10 @@
 			position: relative;
 			margin: 0 auto;
 			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            background-color: #fff;
+            background-color: #fff
 		}
 
-		.slider-container input[type="radio"] {
-			display: none;
-		}
+		.slider-container input[type="radio"] { display: none }
 
 		.slider-container > div {
            position: absolute;
@@ -45,50 +38,35 @@
            transition: all 0.5s ease-in-out;
            display: flex;
            align-items: center;
-           justify-content: center;
+           justify-content: center
 		}
 
-		.slide-1 {
-			background-color:  #2196F3;
-		}
+		.slide-1 { background-color:  #2196F3 }
 
-		.slide-2 {
-			background-color: #E91E63;
-			
-		}
+		.slide-2 { background-color: #E91E63 }
 
-		.slide-3 {
-			background-color: #263238;
-		}
+		.slide-3 { background-color: #263238 }
 
-		.slide-2 {
-			flex-direction: column;
-		}
+		.slide-2 { flex-direction: column }
 
-        #slide-1:checked ~ .slide-1 { z-index: 5; opacity: 1; }
+        #slide-1:checked ~ .slide-1 { z-index: 5; opacity: 1 }
 
-        #slide-2:checked ~ .slide-2 { z-index: 5; opacity: 1; }
+        #slide-2:checked ~ .slide-2 { z-index: 5; opacity: 1 }
 
-        #slide-3:checked ~ .slide-3 { z-index: 5; opacity: 1; }
+        #slide-3:checked ~ .slide-3 { z-index: 5; opacity: 1 }
 
       
-        #slide-1:checked ~ footer [data-slide="1"]:after,
-        #slide-2:checked ~ footer [data-slide="2"]:after, 
-        #slide-3:checked ~ footer [data-slide="3"]:after {
-        	opacity: 1;
+        #slide-1:checked ~ nav [data-slide="1"]:after,
+        #slide-2:checked ~ nav [data-slide="2"]:after, 
+        #slide-3:checked ~ nav [data-slide="3"]:after {
+        	opacity: 1
         }
 
-        #slide-1:checked ~ footer [data-slide="1"]:after {
-           border-color: #2196F3 transparent transparent;
-        }
+        #slide-1:checked ~ nav [data-slide="1"]:after { border-color: #2196F3 transparent transparent }
 
-        #slide-2:checked ~ footer [data-slide="2"]:after {
-           border-color: #E91E63 transparent transparent;
-        }
+        #slide-2:checked ~ nav [data-slide="2"]:after { border-color: #E91E63 transparent transparent }
 
-        #slide-3:checked ~ footer [data-slide="3"]:after {
-           border-color: #263238 transparent transparent;
-        }
+        #slide-3:checked ~ nav [data-slide="3"]:after { border-color: #263238 transparent transparent }
 
         .intro-section {
            border: 1px dashed;
@@ -97,21 +75,21 @@
            width: 70%;
            margin: 0 auto;
            text-align: center;
-           padding: 13px 10px 17px 10px;
+           padding: 13px 10px 17px 10px
         }
 
-        .intro-section h1 {
+        .intro-section .heading {
         	text-transform: uppercase;
         	color: #fefefe;
         	opacity: 0.89;
-        	text-shadow: -1px -1px 1px rgba(93, 179, 248, 1);
-
+        	font-size: 28px;
+        	text-shadow: -1px -1px 1px rgba(93, 179, 248, 1)
         }
 
         .intro-section strong {
         	font-weight: normal;
         	color: #eee;
-        	opacity: 0.8;
+        	opacity: 0.8
         }
 
         .pagination {
@@ -119,12 +97,11 @@
         	max-width: 500px;
         	display: flex;
         	margin: 30px auto 0 auto;
-        	/*border-radius: 4px;*/
         	overflow: hidden;
         	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         	position: absolute;
             bottom: -51px;
-            width: 100%;
+            width: 100%
         }
 
         .pagination label {
@@ -135,7 +112,7 @@
         	cursor: pointer;
         	width: 33.33%;
         	min-width: 100px;
-        	position: relative;
+        	position: relative
         }
 
         .pagination label:after {
@@ -149,17 +126,12 @@
 			margin:0 auto;
 			border-style: solid;
 			border-width: 10px 10px 0 10px;
-			opacity: 0;
+			opacity: 0
         }
 
+        .pagination label:hover { background-color: #e5e5e5 }
 
-        .pagination label:hover {
-        	background-color: transparent;
-        }
-
-        .pagination label:last-child {
-           border-right: 0;
-        }
+        .pagination label:last-child { border-right: 0 }
 
 	</style>
 </head>
@@ -168,11 +140,12 @@
   <div class="slider-container">
 
        <input type="radio" id="slide-1" checked="checked" name="slide-1">
+
        <div class="slide-1">
-         <header class="intro-section">
-         <h1>Patel Arpan</h1>
+         <div class="intro-section">
+         <h2 class="heading">Patel Arpan</h2>
          <strong>(Designer / Developer)</strong>
-         </header>
+         </div>
        </div>
      
        <input type="radio" id="slide-2" name="slide-1">
@@ -183,12 +156,12 @@
    
        <input type="radio" id="slide-3" name="slide-1">
        <div class="slide-3">
-         <header class="intro-section">
-         <h1>The End</h1>
-         </header>
+         <div class="intro-section">
+         <h2 class="heading">The End</h2>
+         </div>
        </div>
 
-	  <footer class="pagination">
+	   <nav class="pagination">
 	    
 	    <label for="slide-1" data-slide="1">
 	    	Intro
@@ -202,10 +175,9 @@
 	    	The End
 	    </label>
 	  
-	  </footer>
+	   </nav>
 
   </div>
-
 
 </body>
 </html>
