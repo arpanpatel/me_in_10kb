@@ -6,28 +6,28 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<style>
 
-	     h1,h2,h3 { margin:0; padding: 0 } 
+	      h1,h2,h3 { margin:0; padding: 0 } 
 
-	     p { line-height: 24px }
+	      p { line-height: 24px }
 	    
-	    body {
-	    	background: #e2e1e0;
-	    	font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
-	    	color: #444;
-	    }
+  	    body {
+  	    	background: #e2e1e0;
+  	    	font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
+  	    	color: #444;
+  	    }
 
-		.slider-container {
-			max-width: 500px;
-			height: 300px;
-			position: relative;
-			margin: 0 auto;
-			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            background-color: #fff
-		}
+    		.slider-container {
+    			max-width: 500px;
+    			height: 300px;
+    			position: relative;
+    			margin: 0 auto;
+    			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          background-color: #fff
+    		}
 
-		.slider-container input[type="radio"] { display: none }
+    		.slider-container input[type="radio"] { display: none }
 
-		.slider-container > div {
+    		.slider-container > div {
            position: absolute;
            top:0;
            padding: 10px 20px;
@@ -39,15 +39,15 @@
            display: flex;
            align-items: center;
            justify-content: center
-		}
+    		}
 
-		.slide-1 { background-color:  #2196F3 }
+    		.slide-1 { background-color:  #2196F3 }
 
-		.slide-2 { background-color: #E91E63 }
+    		.slide-2 { background-color: #E91E63 }
 
-		.slide-3 { background-color: #263238 }
+    		.slide-3 { background-color: #263238 }
 
-		.slide-2 { flex-direction: column }
+    		.slide-2 { flex-direction: column }
 
         #slide-1:checked ~ .slide-1 { z-index: 5; opacity: 1 }
 
@@ -67,6 +67,11 @@
         #slide-2:checked ~ nav [data-slide="2"]:after { border-color: #E91E63 transparent transparent }
 
         #slide-3:checked ~ nav [data-slide="3"]:after { border-color: #263238 transparent transparent }
+
+         .about-me p, .about-me h2 {
+          color: #e9e9e9;
+          font-weight: normal;
+         }
 
         .intro-section {
            border: 1px dashed;
@@ -94,24 +99,23 @@
 
         .pagination {
         	text-align: center;
-        	max-width: 500px;
         	display: flex;
         	margin: 30px auto 0 auto;
         	overflow: hidden;
         	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         	position: absolute;
-            bottom: -51px;
-            width: 100%
+          bottom: -51px;
+          width: 100%
         }
 
         .pagination label {
         	border-right: 1px solid #e5e5e5;
-        	display: inline-block;
+        	display: block;
+          float: left;
         	padding: 15px 0;
         	background-color: #fff;
         	cursor: pointer;
-        	width: 33.33%;
-        	min-width: 100px;
+        	width: 33.2%;
         	position: relative
         }
 
@@ -122,11 +126,11 @@
         	left:0;
         	right:0;
 	        width: 0;
-			height: 0;
-			margin:0 auto;
-			border-style: solid;
-			border-width: 10px 10px 0 10px;
-			opacity: 0
+    			height: 0;
+    			margin:0 auto;
+    			border-style: solid;
+    			border-width: 10px 10px 0 10px;
+    			opacity: 0
         }
 
         .pagination label:hover { background-color: #e5e5e5 }
@@ -134,13 +138,13 @@
         .pagination label:last-child { border-right: 0 }
 
 	</style>
+
 </head>
 <body>
 
   <div class="slider-container">
 
        <input type="radio" id="slide-1" checked="checked" name="slide-1">
-
        <div class="slide-1">
          <div class="intro-section">
          <h2 class="heading">Patel Arpan</h2>
@@ -149,7 +153,7 @@
        </div>
      
        <input type="radio" id="slide-2" name="slide-1">
-       <div class="slide-2">
+       <div class="slide-2 about-me">
          <h2>About Me</h2>
          <p>Hi there, <br> I'm arpan. 22 year old desinger from india, I specialise in website design.  I maintain a healthy balance between functionality and visual impact in all my work. I believe every piece of design can be a work of art. I love my work and enjoy each new project as I get it.</p>
        </div>
@@ -162,19 +166,9 @@
        </div>
 
 	   <nav class="pagination">
-	    
-	    <label for="slide-1" data-slide="1">
-	    	Intro
-	    </label>
-	    
-	    <label for="slide-2" data-slide="2">
-	    	About Me
-	    </label>
-	    
-	    <label for="slide-3" data-slide="3">
-	    	The End
-	    </label>
-	  
+	    <label for="slide-1" data-slide="1">Intro</label>
+	    <label for="slide-2" data-slide="2">About Me</label>
+	    <label for="slide-3" data-slide="3">The End</label>
 	   </nav>
 
   </div>
