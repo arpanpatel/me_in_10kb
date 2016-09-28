@@ -59,7 +59,8 @@
         #slide-1:checked ~ nav [data-slide="1"]:after,
         #slide-2:checked ~ nav [data-slide="2"]:after, 
         #slide-3:checked ~ nav [data-slide="3"]:after {
-        	opacity: 1
+        	opacity: 1;
+          transform: translateY(0)
         }
 
         #slide-1:checked ~ nav [data-slide="1"]:after { border-color: #2196F3 transparent transparent }
@@ -116,7 +117,7 @@
         	background-color: #fff;
         	cursor: pointer;
         	width: 33.2%;
-        	position: relative
+        	position: relative;
         }
 
         .pagination label:after {
@@ -130,7 +131,9 @@
     			margin:0 auto;
     			border-style: solid;
     			border-width: 10px 10px 0 10px;
-    			opacity: 0
+    			opacity: 0;
+          transform: translateY(-20px);
+          transition: transform 0.5s ease-in-out;
         }
 
         .pagination label:hover { background-color: #e5e5e5 }
